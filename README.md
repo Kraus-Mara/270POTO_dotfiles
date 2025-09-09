@@ -1,5 +1,6 @@
 # 270 POTO dotfiles
 Neovim, fish, kitty and starship Dotfiles that comes with customized starship configurations that can be changed easily : 
+btw it applies FiraCode font to kitty
 
 starp -l will list the profiles for starship, then just type starp <profile> to change
 
