@@ -111,7 +111,7 @@ main() {
     install_nerdfont
     copy_configs
     clear
-    echo_success "Setup applied successfully"
+    echo_success "Setup applied, run starp -l to see the available profiles"
 }
 
 main
