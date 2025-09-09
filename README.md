@@ -28,8 +28,6 @@ cp ~/.config/fish/config.fish ~/.config/fish/config.fish.backup
 
 ## ⚡ Quick Installation
 
-1. Clone the repository:
-
 ```bash
 git clone https://github.com/Kraus-Mara/270POTO_dotfiles.git
 cd 270POTO_dotfiles
