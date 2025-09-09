@@ -62,18 +62,12 @@ You can directly modify:
 * Powerline symbols (``, ``, etc.)
 * The global prompt format (`format = "...$os$directory$git_branch..."`)
 
+For now it only has 2 profiles : ananas and pinky
 ---
 
 ## 🐟 Fish Shell Support Only
 
-This configuration is **designed exclusively for Fish**.
-Ensure your Fish config contains:
-
-```fish
-# Initialize Starship
-starship init fish | source
-```
-
+This configuration is **designed exclusively for Fish**, cause it's mine, and i use fish.
 ---
 
 ## 💾 Backup & Restore
