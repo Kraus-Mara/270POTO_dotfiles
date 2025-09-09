@@ -1,0 +1,110 @@
+# STARSHIP.TOML - Style Powerline avec coins arrondis
+format = """
+[](bg:color_orange fg:color_bg1)\
+$os\
+[](bg:color_orange fg:color_bg1)\
+[](bg:color_yellow fg:color_orange)\
+$directory\
+[](bg:color_yellow fg:color_orange)\
+[](bg:color_aqua fg:color_yellow)\
+$git_branch\
+$git_status\
+[](bg:color_aqua fg:color_yellow)\
+[](bg:color_blue fg:color_aqua)\
+$nodejs\
+$rust\
+$golang\
+$python\
+[](bg:color_blue fg:color_aqua)\
+[](bg:color_bg3 fg:color_blue)\
+$docker_context\
+[](bg:color_bg3 fg:color_blue)\
+[](bg:color_bg1 fg:color_bg3)\
+$time\
+[](bg:color_bg1 fg:color_bg3)\
+$line_break\
+$character"""
+
+# Palette de couleurs
+palette = 'gruvbox_dark'
+
+[palettes.gruvbox_dark]
+color_fg0 = '#fbf1c7'
+color_bg1 = '#3c3836'
+color_bg3 = '#665c54'
+color_blue = '#458588'
+color_aqua = '#689d6a'
+color_green = '#98971a'
+color_orange = '#d65d0e'
+color_purple = '#b16286'
+color_red = '#cc241d'
+color_yellow = '#d79921'
+
+[os]
+disabled = false
+style = "bg:color_orange fg:color_fg0"
+
+[username]
+show_always = true
+style_user = "bg:color_orange fg:color_fg0"
+style_root = "bg:color_orange fg:color_fg0"
+format = '[ $user ]($style)'
+
+[directory]
+style = "fg:color_fg0 bg:color_yellow"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…"
+
+[git_branch]
+symbol = ""
+style = "bg:color_aqua fg:color_fg0"
+format = "[ $symbol $branch ]($style)"
+
+[git_status]
+style = "bg:color_aqua fg:color_fg0"
+format = "[($all_status$ahead_behind)]($style)"
+
+[nodejs]
+symbol = "⬢"
+style = "bg:color_blue fg:color_fg0"
+format = "[ $symbol( $version )]($style)"
+
+[rust]
+symbol = "🦀"
+style = "bg:color_blue fg:color_fg0"
+format = "[ $symbol( $version )]($style)"
+
+[golang]
+symbol = "🐹"
+style = "bg:color_blue fg:color_fg0"
+format = "[ $symbol( $version )]($style)"
+
+[python]
+symbol = "🐍"
+style = "bg:color_blue fg:color_fg0"
+format = "[ $symbol( $version )]($style)"
+
+[docker_context]
+symbol = "🐳"
+style = "bg:color_bg3 fg:color_fg0"
+format = "[ $symbol( $context )]($style)"
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:color_bg1 fg:color_fg0"
+format = "[ $time ]($style)"
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = '[](bold fg:color_green)'
+error_symbol = '[](bold fg:color_red)'
+vimcmd_symbol = '[](bold fg:color_green)'
+vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
+vimcmd_replace_symbol = '[](bold fg:color_purple)'
+vimcmd_visual_symbol = '[](bold fg:color_yellow)'
+
