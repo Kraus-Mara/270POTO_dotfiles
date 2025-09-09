@@ -19,11 +19,11 @@ install_dependencies() {
 
     if command -v apt &> /dev/null; then
         sudo apt update
-        sudo apt install -y fish neovim kitty git curl
+        sudo apt install -y fish neovim kitty git curl unzip
     elif command -v brew &> /dev/null; then
         brew install fish neovim kitty git curl
     elif command -v pacman &> /dev/null; then
-        sudo pacman -Syu --noconfirm fish neovim kitty git curl
+        sudo pacman -Syu --noconfirm fish neovim kitty git curl unzip
     else
         echo_error "Unknown package manager"
         exit 1
@@ -38,6 +38,35 @@ install_dependencies() {
         echo_error "Starship installation failed"
         exit 1
     fi
+}
+
+install_nerdfont() {
+    echo_info "Install: Nerd Font (FiraCode)"
+
+    FONT_DIR="$HOME/.local/share/fonts"
+    mkdir -p "$FONT_DIR"
+    cd "$FONT_DIR" || exit 1
+
+    # Download the latest FiraCode Nerd Font directly
+    FONT_URL="https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip"
+
+    echo_info "Downloading FiraCode Nerd Font..."
+    curl -LO "$FONT_URL"
+    if [ $? -ne 0 ]; then
+        echo_error "Failed to download Nerd Font"
+        return 1
+    fi
+
+    echo_info "Extracting..."
+    unzip -o FiraCode.zip
+    rm FiraCode.zip
+
+    # update font cache (Linux)
+    if command -v fc-cache &> /dev/null; then
+        fc-cache -fv
+    fi
+
+    echo_success "Nerd Font installed"
 }
 
 copy_configs() {
@@ -79,9 +108,10 @@ copy_configs() {
 
 main() {
     install_dependencies
+    install_nerdfont
     copy_configs
     clear
-    echo_success "applied"
+    echo_success "Setup applied successfully"
 }
 
 main

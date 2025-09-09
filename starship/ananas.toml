@@ -1,34 +1,29 @@
 # STARSHIP.TOML - Style Powerline avec coins arrondis
 format = """
-[](bg:color_orange fg:color_bg1)\
+[](bg:color_black fg:color_bg1)\
 $os\
-[](bg:color_orange fg:color_bg1)\
-[](bg:color_yellow fg:color_orange)\
+[](bg:color_yellow fg:color_bg1)\
 $directory\
-[](bg:color_yellow fg:color_orange)\
-[](bg:color_aqua fg:color_yellow)\
+[](bg:color_green fg:color_yellow)\
 $git_branch\
 $git_status\
-[](bg:color_aqua fg:color_yellow)\
-[](bg:color_blue fg:color_aqua)\
+[](bg:color_aqua fg:color_green)\
 $nodejs\
 $rust\
 $golang\
 $python\
 [](bg:color_blue fg:color_aqua)\
-[](bg:color_bg3 fg:color_blue)\
 $docker_context\
-[](bg:color_bg3 fg:color_blue)\
-[](bg:color_bg1 fg:color_bg3)\
+[](bg:color_bg1 fg:color_blue)\
 $time\
-[](bg:color_bg1 fg:color_bg3)\
-$line_break\
+[](bg:color_black fg:color_bg1)\
 $character"""
 
 # Palette de couleurs
 palette = 'gruvbox_dark'
 
 [palettes.gruvbox_dark]
+color_black = '#000000'
 color_fg0 = '#fbf1c7'
 color_bg1 = '#3c3836'
 color_bg3 = '#665c54'
@@ -42,7 +37,10 @@ color_yellow = '#d79921'
 
 [os]
 disabled = false
-style = "bg:color_orange fg:color_fg0"
+style = "bg:color_bg1 fg:color_fg0"
+
+[os.symbols]
+Ubuntu = ""
 
 [username]
 show_always = true
@@ -54,15 +52,15 @@ format = '[ $user ]($style)'
 style = "fg:color_fg0 bg:color_yellow"
 format = "[ $path ]($style)"
 truncation_length = 3
-truncation_symbol = "…"
+truncation_symbol = ""
 
 [git_branch]
 symbol = ""
-style = "bg:color_aqua fg:color_fg0"
+style = "bg:color_green fg:color_fg0"
 format = "[ $symbol $branch ]($style)"
 
 [git_status]
-style = "bg:color_aqua fg:color_fg0"
+style = "bg:color_green fg:color_fg0"
 format = "[($all_status$ahead_behind)]($style)"
 
 [nodejs]
@@ -71,22 +69,22 @@ style = "bg:color_blue fg:color_fg0"
 format = "[ $symbol( $version )]($style)"
 
 [rust]
-symbol = "🦀"
+symbol = ""
 style = "bg:color_blue fg:color_fg0"
 format = "[ $symbol( $version )]($style)"
 
 [golang]
-symbol = "🐹"
+symbol = ""
 style = "bg:color_blue fg:color_fg0"
 format = "[ $symbol( $version )]($style)"
 
 [python]
-symbol = "🐍"
+symbol = ""
 style = "bg:color_blue fg:color_fg0"
 format = "[ $symbol( $version )]($style)"
 
 [docker_context]
-symbol = "🐳"
+symbol = ""
 style = "bg:color_bg3 fg:color_fg0"
 format = "[ $symbol( $context )]($style)"
 
