@@ -31,7 +31,7 @@ cp ~/.config/fish/config.fish ~/.config/fish/config.fish.backup
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/starship-custom.git
+git clone https://github.com/Kraus-Mara/270POTO_dotfiles.git
 cd starship-custom
 ```
 
