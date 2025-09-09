@@ -1,0 +1,57 @@
+# Format général de la ligne
+format = "[](fg:#b47d95)$os[](bg:#c08ea7 fg:#b47d95)$directory[](bg:#745d8a fg:#c08ea7)$git_branch$git_status[](bg:#926ba2 fg:#745d8a)$nix_shell[](bg:#42314b fg:#926ba2)$cmd_duration[](fg:#42314b) "
+
+# --- OS ---
+[os]
+disabled = false
+style = "bg:#b47d95 bold fg:#d9b0cf"
+symbols.NixOS = " "
+symbols.Ubuntu = " "
+
+# --- Directory ---
+[directory]
+style = "bold fg:#d9b0cf bg:#c08ea7"
+format = "[ $path ]($style)"
+truncation_length = 3
+
+# --- Git Branch ---
+[git_branch]
+symbol = ""
+style = "bg:#745d8a"
+format = "[[ $symbol $branch ](bold fg:#d9b0cf bg:#745d8a)]($style)"
+
+# --- Git Status ---
+[git_status]
+style = "bg:#745d8a bold fg:#d9b0cf"
+format = "[$all_status$ahead_behind]($style)"
+
+# --- Nix Shell ---
+[nix_shell]
+format = "[ via nix $name ]($style)"
+style = "bg:#926ba2 bold fg:#d9b0cf"
+
+# --- Time ---
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:#251b2e"
+format = "[[   $time ](fg:#d9b0cf bg:#251b2e)]($style)"
+
+# --- Command Duration ---
+[cmd_duration]
+format = "[ 󰔛 $duration ]($style)"
+disabled = false
+style = "bg:#42314b fg:#d9b0cf"
+show_notifications = false
+min_time_to_notify = 60000
+
+# --- Line Break ---
+[line_break]
+disabled = false
+
+# --- Character ---
+[character]
+disabled = false
+success_symbol = "[  ](bold fg:#7f6291)"
+error_symbol = "[  ](bold fg:#a56876)"
+

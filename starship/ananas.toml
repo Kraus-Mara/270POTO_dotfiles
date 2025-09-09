@@ -40,8 +40,8 @@ disabled = false
 style = "bg:color_bg1 fg:color_fg0"
 
 [os.symbols]
-Ubuntu = ""
-
+Ubuntu = " "
+NixOS = " "
 [username]
 show_always = true
 style_user = "bg:color_orange fg:color_fg0"
