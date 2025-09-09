@@ -32,18 +32,7 @@ cp ~/.config/fish/config.fish ~/.config/fish/config.fish.backup
 
 ```bash
 git clone https://github.com/Kraus-Mara/270POTO_dotfiles.git
-cd starship-custom
-```
-
-2. Make sure Starship is installed:
-
-```bash
-starship --version
-```
-
-3. Run the setup script:
-
-```bash
+cd 270POTO_dotfiles
 bash setup.sh
 ```
 
