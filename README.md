@@ -15,15 +15,6 @@ If you just want to test it, **make a backup of your current files** first:
 cp ~/.config/starship.toml ~/.config/starship.toml.backup
 cp ~/.config/fish/config.fish ~/.config/fish/config.fish.backup
 ```
-
----
-
-## 📦 Repository Contents
-
-* `starship.toml` : The main Starship configuration.
-* `setup.sh` : Script to install and activate the configuration.
-* `README.md` : This file.
-
 ---
 
 ## ⚡ Quick Installation
@@ -54,7 +45,7 @@ For now it only has 2 profiles : ananas and pinky
 
 ## 🐟 Fish Shell Support Only
 
-This configuration is **designed exclusively for Fish**, cause it's mine, and i use fish.
+This configuration is *designed exclusively for Fish*, cause it's mine, and i use fish.
 ---
 
 ## 💾 Backup & Restore
