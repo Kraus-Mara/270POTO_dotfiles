@@ -1,6 +1,7 @@
 starship init fish | source
 set fish_greeting
 if status is-interactive
+pyenv init - fish | source
 
 end
 

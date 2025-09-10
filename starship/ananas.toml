@@ -80,7 +80,7 @@ format = "[ $symbol( $version )]($style)"
 
 [python]
 symbol = ""
-style = "bg:color_blue fg:color_fg0"
+style = "bg:color_aqua fg:color_fg0"
 format = "[ $symbol( $version )]($style)"
 
 [docker_context]
