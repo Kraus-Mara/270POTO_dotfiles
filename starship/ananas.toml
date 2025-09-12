@@ -7,14 +7,14 @@ $directory\
 [](bg:color_green fg:color_yellow)\
 $git_branch\
 $git_status\
-[](bg:color_aqua fg:color_green)\
+[](bg:color_blue fg:color_green)\
 $nodejs\
 $rust\
 $golang\
 $python\
-[](bg:color_blue fg:color_aqua)\
+[](bg:color_purple fg:color_blue)\
 $docker_context\
-[](bg:color_bg1 fg:color_blue)\
+[](bg:color_bg1 fg:color_purple)\
 $time\
 [](bg:color_black fg:color_bg1)\
 $character"""
@@ -80,7 +80,7 @@ format = "[ $symbol( $version )]($style)"
 
 [python]
 symbol = ""
-style = "bg:color_aqua fg:color_fg0"
+style = "bg:color_blue fg:color_fg0"
 format = "[ $symbol( $version )]($style)"
 
 [docker_context]
@@ -105,4 +105,5 @@ vimcmd_symbol = '[](bold fg:color_green)'
 vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
 vimcmd_replace_symbol = '[](bold fg:color_purple)'
 vimcmd_visual_symbol = '[](bold fg:color_yellow)'
+
 
