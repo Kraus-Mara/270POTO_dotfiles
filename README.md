@@ -1,24 +1,10 @@
 # 270 POTO dotfiles
-Neovim, fish, kitty and starship Dotfiles that comes with customized starship configurations that can be changed easily : 
-btw it applies FiraCode font to kitty
-
+Base customization for Starship prompt in Fish shell + Kitty terminal (Wezterm terminal if running on WSL)
 starp -l will list the profiles for starship, then just type starp <profile> to change
 
-
 ---
 
-## ⚠️ Warning
-
-This configuration **will overwrite your existing Starship configuration**.
-If you just want to test it, **make a backup of your current files** first:
-
-```bash
-cp ~/.config/starship.toml ~/.config/starship.toml.backup
-cp ~/.config/fish/config.fish ~/.config/fish/config.fish.backup
-```
----
-
-## ⚡ Quick Installation
+## Installation
 
 ```bash
 git clone https://github.com/Kraus-Mara/270POTO_dotfiles.git
@@ -28,12 +14,13 @@ bash setup.sh
 
 This script will:
 
+* Install all the dependencies
 * Copy `starship.toml` to `~/.config/`
 * Add Starship initialization to your Fish config (`~/.config/fish/config.fish`)
 
 ---
 
-## 🔧 Customization
+## Customization (startship.toml)
 
 You can directly modify:
 
@@ -41,24 +28,13 @@ You can directly modify:
 * Powerline symbols (``, ``, etc.)
 * The global prompt format (`format = "...$os$directory$git_branch..."`)
 
-For now it only has 2 profiles : ananas and pinky
+For now it only has 3 profiles : ananas and ar-pinky and ar-grey
 ---
 
-## 🐟 Fish Shell Support Only
+## Fish Shell Support Only
 
-This configuration is *designed exclusively for Fish*, cause it's mine, and i use fish.
----
-
-## 💾 Backup & Restore
-
-To restore your previous configuration:
-
-```bash
-mv ~/.config/starship.toml.backup ~/.config/starship.toml
-mv ~/.config/fish/config.fish.backup ~/.config/fish/config.fish
-```
+This configuration is designed exclusively for Fish
 
 ---
 
-Enjoy your beautiful, fully customized Starship prompt in Fish + Kitty!
 
