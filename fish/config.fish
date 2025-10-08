@@ -1,8 +1,6 @@
 starship init fish | source
 set fish_greeting
 if status is-interactive
-pyenv init - fish | source
-
 end
 
 function starp
@@ -11,7 +9,7 @@ function starp
         return 1
     end
 
-    if test (count $argv) -eq 1; and test "$argv[1]" = "-l"
+    if test (count $argv) -eq 1; and test "$argv[1]" = -l
         for f in ~/.config/starship/*.toml
             if test -f $f
                 set name (basename $f .toml)
@@ -34,4 +32,3 @@ function starp
         return 1
     end
 end
-
