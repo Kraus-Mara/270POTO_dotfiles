@@ -169,9 +169,9 @@ copy_configs_wsl() {
   fi
 }
 main() {
-  read -p "Are you running this script on WSL? (y/N): " -n 1 -r
+  read -p "Are you running this script on WSL? (y/N): " choice
   echo
-  if [[ $REPLY =~ ^[Yy]$ ]]; then
+  if [ $choice == ^[Yy] ]; then
     install_dependencies_on_wsl
     install_nerdfont
     copy_configs_wsl
