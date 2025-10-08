@@ -99,9 +99,7 @@ install_nerdfont() {
   echo_success "Nerd Font installed"
 }
 
-copy_configs() {
-  echo_info "copying dotfiles"
-
+copy_configs_u() {
   mkdir -p ~/.config
 
   # fish
@@ -118,22 +116,12 @@ copy_configs() {
     echo_success "nvim config pasted"
   fi
 
-  if wsl {
-    # wezterm
-    if [ -d "$REPO_DIR/wezterm" ]; then
-      rm -rf ~/.wezterm.lua
-      cp -r "$REPO_DIR/wezterm" ~/
-      echo_success "wezterm config pasted"
-    fi
-  }
-  else {
-    # kitty
-    if [ -d "$REPO_DIR/kitty" ]; then
-      rm -rf ~/.config/kitty
-      cp -r "$REPO_DIR/kitty" ~/.config/
-      echo_success "kitty config pasted"
-    fi
-  }
+  # kitty
+  if [ -d "$REPO_DIR/kitty" ]; then
+    rm -rf ~/.config/kitty
+    cp -r "$REPO_DIR/kitty" ~/.config/
+    echo_success "kitty config pasted"
+  fi
 
   # starship
   if [ -d "$REPO_DIR/starship" ]; then
@@ -146,14 +134,52 @@ copy_configs() {
   fi
 }
 
-main() {
-  if choice "Are you running this script on WSL? y/N" N; then
-  install_dependencies_on_ubuntu
-  else { install_dependencies_on_wsl }
+copy_configs_wsl() {
+  mkdir -p ~/.config
+
+  # fish
+  if [ -d "$REPO_DIR/fish" ]; then
+    rm -rf ~/.config/fish
+    cp -r "$REPO_DIR/fish" ~/.config/
+    echo_success "fish config pasted"
   fi
-  install_nerdfont
-  copy_configs
-  clear
+
+  # nvim
+  if [ -d "$REPO_DIR/nvim" ]; then
+    rm -rf ~/.config/nvim
+    cp -r "$REPO_DIR/nvim" ~/.config/
+    echo_success "nvim config pasted"
+  fi
+
+  # wezterm
+  if [ -d "$REPO_DIR/wezterm" ]; then
+    rm -rf ~/.wezterm.lua
+    cp -r "$REPO_DIR/wezterm" ~/
+    echo_success "wezterm config pasted"
+  fi
+
+  # starship
+  if [ -d "$REPO_DIR/starship" ]; then
+    rm -rf ~/.config/starship
+    cp -r "$REPO_DIR/starship" ~/.config/
+    echo_success "starship configs pasted"
+  elif [ -f "$REPO_DIR/starship.toml" ]; then
+    cp "$REPO_DIR/starship.toml" ~/.config/
+    echo_success "starship file pasted"
+  fi
+}
+main() {
+  read -p "Are you running this script on WSL? (y/N): " -n 1 -r
+  echo
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    install_dependencies_on_wsl
+    install_nerdfont
+    copy_configs_wsl
+  else
+    install_dependencies_on_ubuntu
+    install_nerdfont
+    copy_configs_u
+  fi
   echo_success "Setup applied, run starp -l to see the available profiles"
 }
 
