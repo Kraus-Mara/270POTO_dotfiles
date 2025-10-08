@@ -44,10 +44,10 @@ install_dependencies_on_ubuntu() {
 install_dependencies_on_wsl() {
   echo_info "Installing fish and wezterm from apt and neovim from snap"
   if command -v apt &>/dev/null; then
-    sudo apt update
     curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
     echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
     sudo chmod 644 /usr/share/keyrings/wezterm-fury.gpg
+    sudo apt update
     sudo apt install -y fish wezterm git curl unzip
     sudo snap install neovim --classic
   elif command -v brew &>/dev/null; then
