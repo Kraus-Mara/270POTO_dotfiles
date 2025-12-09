@@ -1,4 +1,4 @@
-# 270 POTO dotfiles
+# 270 POTO dotfiles for Ubuntu / WSL
 Base customization for Starship prompt in Fish shell + Kitty terminal (Wezterm terminal if running on WSL)
 starp -l will list the profiles for starship, then just type starp <profile> to change
 

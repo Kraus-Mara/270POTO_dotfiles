@@ -21,10 +21,6 @@ install_dependencies_on_ubuntu() {
     sudo apt update
     sudo apt install -y fish kitty git curl unzip
     sudo snap install neovim --classic
-  elif command -v brew &>/dev/null; then
-    brew install fish neovim kitty git curl
-  elif command -v pacman &>/dev/null; then
-    sudo pacman -Syu --noconfirm fish neovim kitty git curl unzip
   else
     echo_error "Unknown package manager"
     exit 1
@@ -50,16 +46,10 @@ install_dependencies_on_wsl() {
     sudo apt update
     sudo apt install -y fish wezterm git curl unzip
     sudo snap install neovim --classic
-  elif command -v brew &>/dev/null; then
-    brew install fish neovim kitty git curl
-  elif command -v pacman &>/dev/null; then
-    sudo pacman -Syu --noconfirm fish neovim kitty git curl unzip
   else
     echo_error "Unknown package manager"
     exit 1
   fi
-
-  # installation de starship
   echo_info "Install : starship"
   curl -sS https://starship.rs/install.sh | sh -s -- -y
   if [ $? -eq 0 ]; then
